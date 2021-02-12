@@ -10,6 +10,7 @@ def index(request):
     else:
         result = 'Prease send your msg.'
 
+
     return HttpResponse(result)
 
 
