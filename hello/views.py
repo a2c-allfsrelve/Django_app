@@ -4,14 +4,19 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    # if 'msg' in request.GET:
-    #     msg = request.GET['msg']
-    #     result = 'You typed  "'+ msg + '"'
-    # else:
-    #     result = 'Prease send your msg.'
-    # result = 'your account :' + nickname + '"('+ str(age) +')"' 
+    prams = {
+        'title': 'Hello/Index',
+        'msg' : 'おっぱいに吸いつきたい。',
+        'goto' : 'next',
+        
+    }
+    return render(request, 'hello/index.html', prams) #settings.pyを忘れるな
 
-    return render(request, 'hello/templates/hello/index.html')
+def next(request):
+    parms = {
+        'title': 'Hello/index',
+        'msg' : 'これは次のページだよん',
+        'goto' : 'index',
+    }
 
-
-
+    return render(request, 'hello/index.html', parms)

@@ -4,12 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>hello</title>
+    <title>{{title}}</title>
 </head>
 
 <body>
     <h1>HELLO Django</h1>
     <p>This is sample.</p>
+    <p>{{msg}}</p>
+    <!--テンプレートタグなるモノらしい。↓は、指定された名前のurlにこれで飛ぶことができるっていうこと。-->
+    <p><a href="{% url goto %}">goto</a></p>
 </body>
 
 </html>

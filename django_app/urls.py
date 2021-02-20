@@ -18,5 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #helloアプリのURLはhello/から始まるっていうことを一括で宣言してるってことらしい。
     path('hello/', include('hello.urls')),
 ]
