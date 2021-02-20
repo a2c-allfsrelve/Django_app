@@ -4,13 +4,14 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    if 'msg' in request.GET:
-        msg = request.GET['msg']
-        result = 'You typed  "'+ msg + '"'
-    else:
-        result = 'Prease send your msg.'
+    # if 'msg' in request.GET:
+    #     msg = request.GET['msg']
+    #     result = 'You typed  "'+ msg + '"'
+    # else:
+    #     result = 'Prease send your msg.'
+    # result = 'your account :' + nickname + '"('+ str(age) +')"' 
 
+    return render(request, 'hello/templates/hello/index.html')
 
-    return HttpResponse(result)
 
 
