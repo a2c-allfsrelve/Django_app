@@ -6,25 +6,35 @@
 <head>
     <meta charset="utf-8">
     <title>{{title}}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'hello\css\style.css'%}" />
 </head>
 
 <body>
     <h1>HELLO Django</h1>
     <p>This is sample.</p>
-    <p>{{msg|safe}}</p>
+    <p>{{message|safe}}</p>
+
+
     <!--テンプレートタグなるモノらしい。
         ↓は、指定された名前のurlにこれで飛ぶことができるっていうこと。-->
 
 
     <form action="{% url 'index' %}" method="POST">
-        {% csrf_token %}
+        {% csrf_token %} 
         {{ form }}
         <input type="submit" value="click">
 
         <!-- <label for="msg">message: </label>
         <input id="msg" type="text" name="msg">
         <input type="submit" value="click"> -->
+    </form>
+
+
+    <form action="{% url 'index2' %}" method="POST">
+        {% csrf_token %} 
+        {{ form.as_p }} <!--pタグとして出力するっていう意味らしい。-->
+        <input type="submit" value="click">
+
     </form>
 
 </body>

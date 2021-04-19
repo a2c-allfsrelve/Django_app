@@ -7,5 +7,16 @@ class HelloForm(forms.Form):
     mail = forms.CharField(label='mail')
     age = forms.CharField(label='age')
 
-    # forms.CharField -> テキストを入力するフォーム
-    # forms.IntegerField -> 整数の値を入力するフォーム
+#プルダウンの書き方も一応ここに記しておく
+class HelloForm2(forms.Form):
+    data = [
+        ('one', 'item1'),
+        ('two', 'item2'),
+        ('three', 'item3'),
+        ('four', 'item4'),
+    ]
+    choice = forms.MultipleChoiceField(label='radio', choices=data, widget=forms.Select(attrs={'size':4}))
+
+
+# forms.CharField -> テキストを入力するフォーム
+# forms.IntegerField -> 整数の値を入力するフォーム
